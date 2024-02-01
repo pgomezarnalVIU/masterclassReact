@@ -1,4 +1,5 @@
 import './App.css';
+import Celda from './Celda';
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
       {/*FIN MARCADOR*/}
       {/*CELDAS*/}
       <div className="row borderInside bg-body-secondary text-center justify-content-center">
-        <div className="col my-1 p-0"></div>
+        <div className="col my-1 p-0">
+            <Celda/>
+            <Celda/>
+            <Celda/>
+        </div>
       </div>
       {/*FIN CELDAS*/}
     </div>
