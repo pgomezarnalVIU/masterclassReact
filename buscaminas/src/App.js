@@ -25,9 +25,9 @@ function App() {
       {/*CELDAS*/}
       <div className="row borderInside bg-body-secondary text-center justify-content-center">
         <div className="col my-1 p-0">
-            <Celda/>
-            <Celda/>
-            <Celda/>
+            <Celda valor={1}/>
+            <Celda valor={2}/>
+            <Celda valor={0}/>
         </div>
       </div>
       {/*FIN CELDAS*/}
