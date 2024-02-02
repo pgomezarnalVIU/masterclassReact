@@ -2,6 +2,10 @@ import './App.css';
 import Celda from './Celda';
 
 function App() {
+  const mapaCeldas=["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"]
+  const celdas = mapaCeldas.map((valor,index) => 
+    <div classNAme="col-auto p-0"><Celda valor={valor} key={index}/></div>
+  );
   return (
   <div className="container text-center" style={{ width: 340 }}>
     {/*TABLERO*/}
@@ -25,9 +29,9 @@ function App() {
       {/*CELDAS*/}
       <div className="row borderInside bg-body-secondary text-center justify-content-center">
         <div className="col my-1 p-0">
-            <Celda valor={1}/>
-            <Celda valor={2}/>
-            <Celda valor={0}/>
+          <div className="d-flex flex-wrap justify-content-center">
+            {celdas}
+          </div>
         </div>
       </div>
       {/*FIN CELDAS*/}
