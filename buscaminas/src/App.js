@@ -1,15 +1,19 @@
 import './App.css';
+import { useState } from 'react';
 import Celda from './Celda';
 
 function App() {
-  const mapaCeldas=["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"]
-  const celdas = mapaCeldas.map((valor,index) => 
+  //Definir pro,valores componente
+  const [mapaValores,setMapaValores]=useState(Array(25).fill(" "));
+  //Valores antiguos
+  //const mapaCeldas=["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"]
+  const celdas = mapaValores.map((valor,index) => 
     <div classNAme="col-auto p-0"><Celda valor={valor} key={index}/></div>
   );
 
   //Funcion respuesta al BTN
   const btnComenzar = ()=>{
-    alert('COMIENZA LA PARTIDA')
+    setMapaValores(["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"]);
   }
   return (
   <div className="container text-center" style={{ width: 340 }}>
