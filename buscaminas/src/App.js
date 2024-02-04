@@ -6,6 +6,11 @@ function App() {
   const celdas = mapaCeldas.map((valor,index) => 
     <div classNAme="col-auto p-0"><Celda valor={valor} key={index}/></div>
   );
+
+  //Funcion respuesta al BTN
+  const btnComenzar = ()=>{
+    alert('COMIENZA LA PARTIDA')
+  }
   return (
   <div className="container text-center" style={{ width: 340 }}>
     {/*TABLERO*/}
@@ -37,6 +42,7 @@ function App() {
       {/*FIN CELDAS*/}
     </div>
     {/*FIN TABLERO*/}
+    <div><button className="btn btn-outline-secondary mt-2" onClick={btnComenzar}>COMIENZA LA PARTIDA</button></div>
   </div>
   );
 }
