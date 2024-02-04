@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Celda from './Celda';
+import Tiempo from './Tiempo';
 
 function App() {
   //Valores internos
@@ -37,12 +38,7 @@ function App() {
           <div className="align-self-center m-2 borderInsideS">
             <img src="acierto.png" style={{ width: 50 }} />
           </div>
-          <div
-            className="lcdText text-danger pe-2 m-2 borderInsideS"
-            style={{ width: 54 }}
-          >
-            00
-          </div>
+            <Tiempo/>
         </div>
       </div>
       {/*FIN MARCADOR*/}
