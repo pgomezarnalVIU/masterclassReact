@@ -3,18 +3,29 @@ import { useState } from 'react';
 import Celda from './Celda';
 
 function App() {
+  //Valores internos
+  const valores=["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"];
   //Definir pro,valores componente
   const [mapaValores,setMapaValores]=useState(Array(25).fill(" "));
   //Valores antiguos
   //const mapaCeldas=["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"]
   const celdas = mapaValores.map((valor,index) => 
-    <div classNAme="col-auto p-0"><Celda valor={valor} key={index}/></div>
+    <div classNAme="col-auto p-0" key={index}><Celda valor={valor} onCeldaClick={() => mostrarValor(index)}/></div>
   );
 
   //Funcion respuesta al BTN
   const btnComenzar = ()=>{
-    setMapaValores(["1","1","1","0","0","1","*","1","0","0","1","1","2","2","1","0","1","*","*","1","0","1","2","2","1"]);
+    setMapaValores(Array(25).fill(" "));
   }
+
+  //Funcion que cambia el valor de una celda
+  const mostrarValor = (index)=>{
+      //Hace una copia de los valores para prevenir estados indeseados
+      const valoresNuevos = mapaValores.slice();
+      valoresNuevos[index] = valores[index];
+      setMapaValores(valoresNuevos);
+  }
+  
   return (
   <div className="container text-center" style={{ width: 340 }}>
     {/*TABLERO*/}
